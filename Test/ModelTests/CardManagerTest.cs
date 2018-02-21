@@ -15,11 +15,25 @@ namespace Application.Tests
         }
 
         [TestMethod]
+        public void CardManager_GetAllWorks()
+        {
+            Card[] cards = CardManager.GetAll();
+
+            Assert.IsNotNull(cards);
+            if(cards != null)
+            {
+                Assert.AreEqual(0, cards.Length);
+            }
+        }
+
+        [TestMethod]
         public void CardManager_AddsCards()
         {
             Card card = CardManager.CreateCard("Squire");
 
+            Assert.IsNotNull(card);
             Assert.AreEqual(1, CardManager.GetAll().Length);
+            Assert.AreEqual("Squire", card.GetName());
         }
 
         [TestMethod]
@@ -53,8 +67,9 @@ namespace Application.Tests
 
             Card[] cards = CardManager.GetCardsByID(new int[] {card1.GetID(), card2.GetID()});
 
-            Assert.AreEqual("Splinter Twin", cards[0].GetName());
-            Assert.AreEqual("Deceiver Exarch", cards[1].GetName());
+            Assert.AreEqual(2, cards.Length);
+            Assert.IsTrue(cards[0].GetName() == "Splinter Twin" || cards[1].GetName() == "Splinter Twin");
+            Assert.IsTrue(cards[0].GetName() == "Deceiver Exarch" || cards[1].GetName() == "Deceiver Exarch");
         }
 
         [TestMethod]
@@ -82,7 +97,8 @@ namespace Application.Tests
                 Card card2 = CardManager.CreateCard("Clone");
             } catch(Exception ex)
             {
-                Assert.AreEqual(ex.Message, CardManager.DuplicateCardCreationMessage);
+                expectedException = ex;
+                Assert.AreEqual("Duplicate entry 'Clone' for key 'name'", ex.Message);
             }
             Assert.IsNotNull(expectedException);
         }
