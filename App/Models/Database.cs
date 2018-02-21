@@ -1,3 +1,7 @@
+using System;
+using MySql.Data.MySqlClient;
+using Application;
+
 namespace Application.Models
 {
     public class DB

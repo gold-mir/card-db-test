@@ -8,7 +8,7 @@ namespace Application
 {
     public static class DBConfiguration
     {
-        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=card_db_test;";
+        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=carddb_test;";
     }
     public class Startup
     {
