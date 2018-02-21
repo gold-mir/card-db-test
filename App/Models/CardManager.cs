@@ -3,6 +3,8 @@ namespace Application.Models
     public static class CardManager
     {
 
+        public const string DuplicateCardCreationMessage = "A card with that name already exists.";
+
         public static Card CreateCard(string name)
         {
             return null;
@@ -41,6 +43,11 @@ namespace Application.Models
         public static void DestroyAll()
         {
             
+        }
+
+        public static Card[] GetAll()
+        {
+            return null;
         }
     }
 }

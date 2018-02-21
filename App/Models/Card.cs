@@ -7,11 +7,12 @@ namespace Application.Models
         private int _id;
 
         public Card(string cardName)
+            : this(cardName, -1)
         {
-            this(cardName, -1);
+
         }
 
-        public Card(string cardName, string ID)
+        public Card(string cardName, int ID)
         {
             _name = cardName;
             _id = ID;
@@ -24,7 +25,7 @@ namespace Application.Models
 
         public int GetID()
         {
-            return _id;1
+            return _id;
         }
     }
 }

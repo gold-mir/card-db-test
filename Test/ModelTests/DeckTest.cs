@@ -1,6 +1,6 @@
 using System;
 using MySql.Data.MySqlClient;
-using ToDoList.Models;
+using Application.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Application.Tests

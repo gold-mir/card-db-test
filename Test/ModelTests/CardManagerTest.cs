@@ -51,7 +51,7 @@ namespace Application.Tests
             Card card1 = CardManager.CreateCard("Splinter Twin");
             Card card2 = CardManager.CreateCard("Deceiver Exarch");
 
-            Card[] cards = CardManager.GetCardsByID(new int[] {card1.GetID(), card2.GetId()});
+            Card[] cards = CardManager.GetCardsByID(new int[] {card1.GetID(), card2.GetID()});
 
             Assert.AreEqual("Splinter Twin", cards[0].GetName());
             Assert.AreEqual("Deceiver Exarch", cards[1].GetName());
@@ -70,21 +70,21 @@ namespace Application.Tests
 
             Assert.IsNull(CardManager.GetCard("Show and Tell"));
             Assert.IsNull(CardManager.GetCard("Omniscience"));
-            Assert.IsNUll(CardManager.GetCard("Emrakul, the Aeons Torn"));
+            Assert.IsNull(CardManager.GetCard("Emrakul, the Aeons Torn"));
         }
-
+        [TestMethod]
         public void CardManager_ErrorsWhenTryingToCreateDuplicate()
         {
             Card card = CardManager.CreateCard("Clone");
-            Card card2;
+            Exception expectedException = null;
             try
             {
-                card2 = CardManager.CreateCard("Clone");
+                Card card2 = CardManager.CreateCard("Clone");
             } catch(Exception ex)
             {
                 Assert.AreEqual(ex.Message, CardManager.DuplicateCardCreationMessage);
             }
-            Assert.IsNull(card2);
+            Assert.IsNotNull(expectedException);
         }
     }
 }

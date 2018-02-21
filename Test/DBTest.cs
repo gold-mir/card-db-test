@@ -1,4 +1,4 @@
-using Aplication;
+using Application;
 
 namespace Application.Tests
 {
@@ -6,7 +6,7 @@ namespace Application.Tests
     {
         public DBTest()
         {
-            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=carddb_test"
+            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=carddb_test";
         }
     }
 }
