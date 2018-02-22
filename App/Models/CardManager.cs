@@ -209,13 +209,4 @@ namespace Application.Models
             return cards.ToArray();
         }
     }
-
-    // public class DuplicatecardException : Exception
-    // {
-    //     public DuplicatecardException(string cardname)
-    //     : base($"A card with the name '{cardname}' already exists.")
-    //     {
-    //
-    //     }
-    // }
 }

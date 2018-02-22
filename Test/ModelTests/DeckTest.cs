@@ -8,6 +8,6 @@ namespace Application.Tests
     [TestClass]
     public class DeckTest
     {
-
+        
     }
 }
